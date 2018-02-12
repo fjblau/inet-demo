@@ -22,6 +22,11 @@ participant Client identified by clientId {
 participant Shipper identified by shipperId {
      o String shipperId
 }
+event DeliveryEvent {
+  o String loadId
+  o String notes
+}
+
 transaction DeliverLoad {
      --> Load deliveredLoad
      --> Shipper deliveredByShipper
