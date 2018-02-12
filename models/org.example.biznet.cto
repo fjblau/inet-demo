@@ -1,0 +1,36 @@
+/**
+ * Write your model definitions here
+ */
+namespace org.example.biznet
+asset TransportOrder identified by transportOrderId {
+     o String transportOrderId
+     o String origin
+     o String destination
+     --> Client owner
+     --> Load[] loads
+}
+asset Load identified by loadId {
+     o String loadId
+     o String loadOrigin
+     o String loadDestination
+     --> Shipper loadShipper
+     o String loadStatus
+}
+participant Client identified by clientId {
+     o String clientId
+}
+participant Shipper identified by shipperId {
+     o String shipperId
+}
+transaction DeliverLoad {
+     --> Load deliveredLoad
+     --> Shipper deliveredByShipper
+ }
+transaction UpdateLoadStatus {
+     --> Load load
+     o String newStatus
+}
+transaction AddLoadToOrder {
+  --> TransportOrder order
+  --> Load load
+}
