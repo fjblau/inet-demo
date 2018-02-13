@@ -1,0 +1,10 @@
+/**
+ * New query file
+ */
+
+query Q1 {
+    description: "Select all orderes matching PARAM"
+    statement:
+        SELECT org.example.biznet.TransportOrder
+            WHERE (_$OrderParam == transportOrderId)
+}
