@@ -1,6 +1,6 @@
 # Hyperledger Demo
 
-First Install:
+## First Install:
 
 git clone https://github.com/fjblau/inet-demo.git
 
@@ -16,7 +16,7 @@ composer card import --file networkadmin.card
 
 composer-rest-server
 
-For Updates:
+## For Updates:
 
 composer archive create -t dir -n . -a inet-demo.bna
 
