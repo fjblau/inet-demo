@@ -3,7 +3,19 @@
  */
 
 query Q1 {
-    description: "Select all orderes matching PARAM"
+    description: "Select all orders matching PARAM"
+    statement:
+        SELECT org.example.biznet.TransportOrder
+            WHERE (_$OrderParam == transportOrderId)
+}
+query Q2 {
+    description: "Select all loads matching PARAM"
+    statement:
+        SELECT org.example.biznet.Load
+            WHERE (_$LoadParam == loadId)
+}
+query Q3 {
+    description: "Select all loads matching Order PARAM"
     statement:
         SELECT org.example.biznet.TransportOrder
             WHERE (_$OrderParam == transportOrderId)
